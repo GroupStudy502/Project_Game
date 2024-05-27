@@ -5,6 +5,7 @@ import org.choongang.main.MainRouter;
 import org.choongang.template.Templates;
 
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public abstract class AbstractController implements Controller {
 
@@ -24,11 +25,10 @@ public abstract class AbstractController implements Controller {
 
     /**
      * 입력 항목
-     *  - 문자: q, exit, quit - 종료
-     *  - 숫자: 메뉴 항목
+     * - 문자: q, exit, quit - 종료
+     * - 숫자: 메뉴 항목
      */
     public void prompt() {
-        System.out.println(Templates.getInstance().doubleLine());
         System.out.print("메뉴 선택: ");
         String menu = sc.nextLine();
         if (menu.equals("q") || menu.equals("quit") || menu.equals("exit")) {
@@ -43,6 +43,25 @@ public abstract class AbstractController implements Controller {
             e.printStackTrace();
             System.out.println("메뉴는 숫자로 입력하세요.");
         }
+    }
+
+    /**
+     * 입력과 검증을 함께 진행
+     *
+     * @param message   : 항목 메세지
+     * @param predicate : 판별식
+     * @return
+     */
+
+    protected String promptWithValidation(String message, Predicate<String> predicate) {
+        String str = null;
+        do {
+            System.out.print(message);
+            str = sc.nextLine();
+        } while (!predicate.test(str));
+
+        return str;
+
     }
 
     /**
