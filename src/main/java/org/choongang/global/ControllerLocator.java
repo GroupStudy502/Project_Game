@@ -1,6 +1,6 @@
 package org.choongang.global;
 
-import org.choongang.global.constants.Menu;
+import java.awt.*;
 
 public interface ControllerLocator {
     Controller find(Menu menu);
