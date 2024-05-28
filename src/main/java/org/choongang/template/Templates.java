@@ -26,6 +26,7 @@ public class Templates {
     }
 
     public void render(Menu menu) {
+
         System.out.println(find(menu).getTpl());
     }
 
@@ -48,10 +49,10 @@ public class Templates {
     }
 
     public String line() {
-        return "--------------------------------------\n";
+        return "-----------------------------------\n";
     }
 
     public String doubleLine() {
-        return " =====================================\n";
+        return "===================================\n";
     }
 }
