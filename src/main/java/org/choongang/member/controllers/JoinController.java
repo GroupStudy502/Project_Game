@@ -19,7 +19,7 @@ public class JoinController extends AbstractController {
     }
 
     @Override
-    public void prompt() {
+    public void prompt() { // 기본 구현 : 메뉴 구현 -> 필요한 내용 재정의
         String userId = promptWithValidation("아이디(6자리 이상): ", s -> s.length() >= 6);
 
         String userPw = promptWithValidation("비밀번호(8자리 이상): ", s -> s.length() >= 8);
@@ -35,6 +35,7 @@ public class JoinController extends AbstractController {
 
         String userNm = promptWithValidation("회원명: ", s -> !s.isBlank());
 
+        // 사용자가 입력한 데이터를 담아서(controllers), DTO 객체 -> View로 보내기 위해(처리)
         RequestJoin form = RequestJoin.builder()
                 .userId(userId)
                 .userPw(userPw)

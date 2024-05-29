@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 
 public abstract class AbstractController implements Controller {
 
+    // 공통적인 부분(공유 자원)으로 스캐너를 공유하기 위해 추상 메서드로 정의해놓음
     protected Scanner sc;
 
     public AbstractController() {
@@ -52,8 +53,9 @@ public abstract class AbstractController implements Controller {
      * @param predicate : 판별식
      * @return
      */
+    // 추상 클래스의 목적 : 설계, 공통 자원 기능 공유, 인터페이스의 목적 : 설계, 함수형 인터페이스 : 사용자 정의 기능, 열린 기능
     protected String promptWithValidation(String message, Predicate<String> predicate) {
-        String str = null;
+        String str = null; // 판별식
         do {
             System.out.print(message);
             str = sc.nextLine();
@@ -68,9 +70,9 @@ public abstract class AbstractController implements Controller {
      */
     @Override
     public final void run() {
-        common();
-        show();
-        prompt();
+        common(); // 공통적으로 학생관리 프로그램 상단에 출력
+        show(); // 각각 다른 기능을 넣기 위해 하위 인터페이스에서 구현하면 된다 -> 그래서 따로 정의해두지 않음
+        prompt(); // 입력받는 부분
     }
 
     private void change(int menuNo) {
