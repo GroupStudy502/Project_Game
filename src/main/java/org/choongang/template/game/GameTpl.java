@@ -1,9 +1,11 @@
 package org.choongang.template.game;
 
+
 import org.choongang.template.Template;
 import org.choongang.template.Templates;
 
 public class GameTpl implements Template {
+
     @Override
     public String getTpl() {
         StringBuffer sb = new StringBuffer(1000);
@@ -16,4 +18,5 @@ public class GameTpl implements Template {
 
         return sb.toString();
     }
+
 }
