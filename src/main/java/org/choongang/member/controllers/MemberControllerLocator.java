@@ -1,21 +1,16 @@
 package org.choongang.member.controllers;
 
+import org.choongang.global.AbstractControllerLocator;
 import org.choongang.global.Controller;
 import org.choongang.global.ControllerLocator;
-import org.choongang.global.constants.Menu;
+import org.choongang.global.Menu;
+import org.choongang.global.constants.MainMenu;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MemberControllerLocator implements ControllerLocator {
+public class MemberControllerLocator extends AbstractControllerLocator {
 
     private static ControllerLocator instance;
 
-    private Map<Menu, Controller> controllers;
-
-    private MemberControllerLocator() {
-        controllers = new HashMap<>();
-    }
+    private MemberControllerLocator() {}
 
     public static ControllerLocator getInstance() {
         if (instance == null) {
@@ -33,7 +28,9 @@ public class MemberControllerLocator implements ControllerLocator {
             return controller;
         }
 
-        switch(menu) {
+        MainMenu mainMenu = (MainMenu)menu;
+
+        switch(mainMenu) {
             case JOIN: controller = new JoinController(); break;
             default: controller = new LoginController();
         }
