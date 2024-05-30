@@ -37,8 +37,8 @@ public class GameControllerLocator extends AbstractControllerLocator {
                 case RANKING: controller = new RankingController(); break;
             }
         } else { // 게임 메인 메뉴
-            //controller = new GameController();
-            controller = new PlayController();
+            controller = new GameController();
+            //controller = new PlayController();
         }
 
 
