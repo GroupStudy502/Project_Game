@@ -38,7 +38,7 @@ public class GameControllerLocator extends AbstractControllerLocator {
             }
         } else { // 게임 메인 메뉴
             controller = new GameController();
-            //controller = new PlayController();
+            //controller = new PlayController(); controllor 이슈
         }
 
 
