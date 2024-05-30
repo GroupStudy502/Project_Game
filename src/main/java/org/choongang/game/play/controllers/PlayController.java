@@ -4,6 +4,7 @@ package org.choongang.game.play.controllers;
 import org.choongang.global.AbstractController;
 import org.choongang.global.constants.MainMenu;
 import org.choongang.main.MainRouter;
+import org.choongang.template.Templates;
 import org.choongang.template.game.GameTpl;
 import org.choongang.template.game.PlayTpl;
 
@@ -151,7 +152,6 @@ public class PlayController extends AbstractController {
 
     @Override
     public void show() {
-
     }
 
     @Override
