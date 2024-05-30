@@ -19,7 +19,7 @@ public class MainRouter implements Router {
             instance = new MainRouter();
         }
 
-        게임수정
+
         return instance;
     }
 
