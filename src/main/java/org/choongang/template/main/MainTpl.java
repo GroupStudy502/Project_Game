@@ -9,16 +9,19 @@ public class MainTpl implements Template {
     public String getTpl() {
         StringBuffer sb = new StringBuffer(2000);
 
-        sb.append("\n< 묵찌빠 게임 >\n"+"\n")
-            .append("메뉴를 선택하세요.\n");
+        sb.append("\n< 묵찌빠 Game >\n")
+                .append("메뉴를 선택하세요.\n");
         if (MemberSession.isLogin()) {
             Member member = MemberSession.getMember();
-            sb.append(String.format("%s(%s)님 로그인\n", member.getUserNm(), member.getUserId()));
+            sb.append(String.format("%s(%s)님 로그인 접속\n", member.getUserNm(), member.getUserId()));
             sb.append("1. 게임하기\n");
             sb.append("2. 로그아웃\n");
+            sb.append("3. 종료하기\n");
         } else {
             sb.append("1. 회원가입\n");
             sb.append("2. 로그인\n");
+            sb.append("3. 종료하기\n");
+
         }
         sb.append("--------------------------------\n");
 

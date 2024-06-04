@@ -72,7 +72,10 @@ public class PlayController extends AbstractController {
             switch(num) {
                 case 1 : System.out.println("컴퓨터 : 묵");
                     System.out.println("----- 플레이어 승리! -----");
-                    System.out.println("=========== GAME OVER ==========");return;//다시 mainMenu로 돌아감
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);
+                    return;
+                   //다시 mainMenu로 돌아감
 
                 case 2 : System.out.println("컴퓨터 : 찌");v.win();return;//플레이어가 다시 공격자
 
@@ -86,7 +89,8 @@ public class PlayController extends AbstractController {
 
                 case 2 : System.out.println("컴퓨터 : 찌");
                     System.out.println("----- 플레이어 승리! -----");
-                    System.out.println("=========== GAME OVER ==========");return;
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);return;
 
                 case 3 : System.out.println("컴퓨터 : 빠");v.win();return;
             }
@@ -100,7 +104,8 @@ public class PlayController extends AbstractController {
 
                 case 3 : System.out.println("컴퓨터 : 빠");
                     System.out.println("----- 플레이어 승리! -----");
-                    System.out.println("=========== GAME OVER ==========");return;
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);return;
             }
         }
     }
@@ -115,7 +120,8 @@ public class PlayController extends AbstractController {
             switch(num) {
                 case 1 : System.out.println("컴퓨터 : 묵");
                     System.out.println("----- 플레이어 패배! -----");
-                    System.out.println("=========== GAME OVER ==========");return;
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);return;
 
                 case 2 : System.out.println("컴퓨터 : 찌");v.win();return;
 
@@ -129,7 +135,8 @@ public class PlayController extends AbstractController {
 
                 case 2 : System.out.println("컴퓨터 : 찌");
                     System.out.println("----- 플레이어 패배! -----");
-                    System.out.println("=========== GAME OVER ==========");return;
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);return;
 
                 case 3 : System.out.println("컴퓨터 : 빠");v.win();return;
             }
@@ -143,7 +150,8 @@ public class PlayController extends AbstractController {
 
                 case 3 : System.out.println("컴퓨터 : 빠");
                     System.out.println("----- 플레이어 패배! -----");
-                    System.out.println("=========== GAME OVER ==========");return;
+                    System.out.println("=========== GAME OVER ==========");
+                    MainRouter.getInstance().change(MainMenu.MAIN);return;
             }
         }
 

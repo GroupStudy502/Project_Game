@@ -32,8 +32,8 @@ public abstract class AbstractController implements Controller {
     public void prompt() {
         System.out.print("메뉴 선택: ");
         String menu = sc.nextLine();
-        if (menu.equals("q") || menu.equals("quit") || menu.equals("exit")) {
-            System.out.println("종료 합니다.");
+        if (menu.equals("3") || menu.equals("quit") || menu.equals("exit")) {
+            System.out.println("게임을 종료 합니다.");
             System.exit(0); // 0 - 정상 종료, 1 - 비정상 종료
         }
 
@@ -82,6 +82,9 @@ public abstract class AbstractController implements Controller {
                 case 2:
                     MemberSession.logout(); // 로그아웃
                     mainMenu = MainMenu.MAIN;
+                    break;
+                case 3:
+                    System.exit(0);
                     break;
             }
         } else { // 미로그인 상태
