@@ -10,6 +10,6 @@
         <appender-ref ref="stdout" />
     </root>
 
-    <logger name="org.choongang.member.mapper" level="DEBUG" />
-    <logger name="org.choongang.game.mapper" level="DEBUG" />
+    <logger name="org.choongang.member.mapper" level="ERROR" />
+    <logger name="org.choongang.game.mapper" level="ERROR" />
 </configuration>

@@ -26,8 +26,12 @@ public class PlayTpl implements Template {
             int su = sc.nextInt();
 
             switch (su) {
-                case 1 : gameStart();break;
-                case 2 : System.out.println("        < 게임 종료 >        ");return;
+                case 1:
+                    gameStart();
+                    break;
+                case 2:
+                    System.out.println("        < 게임 종료 >        ");
+                    return;
             }
         } while (true);
     }
@@ -40,12 +44,21 @@ public class PlayTpl implements Template {
             System.out.println("\n" + "----- 공격자 정하기! 가위바위보 -----");
             System.out.println("1.바위 2.가위 3.보");
             System.out.print("입력 : ");
-            int num=sc.nextInt();
+            int num = sc.nextInt();
 
-            switch(num){
-                case 1 : System.out.println("\n" + "플레이어 : 바위");ct.pare(1);return;  //비교하는 controller에 pare로 감
-                case 2 : System.out.println("\n" + "플레이어 : 가위");ct.pare(2);return;
-                case 3 : System.out.println("\n" + "플레이어 : 보");ct.pare(3);return;
+            switch (num) {
+                case 1:
+                    System.out.println("\n" + "플레이어 : 바위");
+                    ct.pare(1);
+                    return;  //비교하는 controller에 pare로 감
+                case 2:
+                    System.out.println("\n" + "플레이어 : 가위");
+                    ct.pare(2);
+                    return;
+                case 3:
+                    System.out.println("\n" + "플레이어 : 보");
+                    ct.pare(3);
+                    return;
             }
         } while (true);
     }
@@ -56,7 +69,7 @@ public class PlayTpl implements Template {
 
         do {
             System.out.println("\n" + "=======  묵 찌 빠!  =======");
-            System.out.println("    < 공격자 : 플레이어 >    " + "\n");
+            System.out.println("    < 공격자 : 플레이어 >   ");
 
             process(sc, "WIN");
 

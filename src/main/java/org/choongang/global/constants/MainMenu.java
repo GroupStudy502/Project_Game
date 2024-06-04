@@ -8,4 +8,5 @@ public enum MainMenu implements Menu {
     LOGIN, // 로그인
     MYPAGE, // 마이페이지
     GAME, // 게임하기
+    END, // 종료하기
 }

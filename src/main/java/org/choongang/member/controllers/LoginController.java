@@ -34,8 +34,8 @@ public class LoginController extends AbstractController {
         // 로그인 처리 ...
         Router router = MainRouter.getInstance();
         try {
-
             Service service = MemberServiceLocator.getInstance().find(MainMenu.LOGIN);
+          //  System.out.println("/n"+"----LOGIN ----");
             service.process(form);
 
             router.change(MainMenu.MAIN); // 로그인 성공시 -> 메인페이지
